@@ -15,4 +15,10 @@ defmodule ProjectEulerElixirTest do
     assert ProjectEulerElixir.problem2(35) == 44
     assert ProjectEulerElixir.problem2(4_000_000) == 4_613_732
   end
+
+  test "problem 3 largest prime factor of 600851475143" do
+    assert ProjectEulerElixir.problem3(13_195) == 29
+
+    assert ProjectEulerElixir.problem3(600_851_475_143) == 6857
+  end
 end

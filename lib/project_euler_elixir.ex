@@ -18,8 +18,10 @@ defmodule ProjectEulerElixir do
       |> Enum.reduce(0, fn(x, acc) -> x + acc end)
   end
 
-  @spec range_to(integer) :: List
-  def range_to(value) do
-    (1..value)
+  @spec problem3(integer) :: integer
+  def problem3(limit) do
+    limit
+      |> Prime.factors()
+      |> Enum.max()
   end
 end
