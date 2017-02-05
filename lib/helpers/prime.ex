@@ -22,10 +22,16 @@ defmodule Prime do
 
   @spec sieve(up_to: integer) :: Stream
   def sieve(up_to: up_to) do
-    {1, []}
-      |> Stream.unfold(&next_prime/1)
+    sieve
       |> Enum.take_while(fn(x) -> x <= up_to end)
   end
+
+  @spec sieve() :: Stream
+  def sieve do
+    {1, []}
+      |> Stream.unfold(&next_prime/1)
+  end
+
 
   @spec next_prime({integer, List}) :: integer
   def next_prime({current, all_primes}) do

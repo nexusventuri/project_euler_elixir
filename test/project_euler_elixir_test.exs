@@ -34,4 +34,9 @@ defmodule ProjectEulerElixirTest do
     assert ProjectEulerElixir.problem6(10) == 2_640
     assert ProjectEulerElixir.problem6(100) == 25_164_150
   end
+
+  test "problem 7 10_001 prime" do
+    assert ProjectEulerElixir.problem7(6) == 13
+    assert ProjectEulerElixir.problem7(10_001) == 104_743
+  end
 end

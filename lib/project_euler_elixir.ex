@@ -58,4 +58,9 @@ defmodule ProjectEulerElixir do
 
     sum_of_numbers * sum_of_numbers - Summation.sum_of_squares(up_to: limit)
   end
+
+  @spec problem7(integer) :: integer
+  def problem7(limit) do
+    Prime.sieve |> Enum.fetch!(limit - 1)
+  end
 end
