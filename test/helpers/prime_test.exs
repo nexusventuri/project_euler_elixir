@@ -2,6 +2,16 @@ defmodule PrimeTest do
   use ExUnit.Case
   doctest Prime
 
+  describe "factors(x)" do
+    test "should calculate factors correctly" do
+      assert Prime.factors(4) == [2]
+      assert Prime.factors(8) == [2]
+      assert Prime.factors(6) == [3, 2]
+      assert Prime.factors(7) == [7]
+      assert Prime.factors(99) == [11, 3]
+    end
+  end
+
   test "is_prime?(x)" do
     assert Prime.is_prime?(4) == false
     assert Prime.is_prime?(15) == false

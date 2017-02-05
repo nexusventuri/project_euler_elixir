@@ -6,9 +6,18 @@ defmodule Prime do
   @spec factors(integer) :: List
   def factors(number) do
     limit = :math.sqrt(number)
-    primes = sieve(up_to: limit)
+    factors(number, sieve(up_to: limit), [])
+  end
 
-    primes |> Enum.filter(fn(x) -> rem(number, x) == 0 end)
+  @spec factors(integer, List, List) :: List
+  def factors(1, [], found), do: found
+  def factors(number, [], found), do: Enum.uniq([number | found])
+
+  def factors(number, [prime | primes], found) do
+    case rem(number, prime) do
+      0 -> factors(div_r(number, prime), primes, [prime | found])
+      _ -> factors(number, primes, found)
+    end
   end
 
   @spec sieve(up_to: integer) :: Stream
@@ -47,5 +56,12 @@ defmodule Prime do
     primes
       |> Stream.take_while(fn(x) -> x <= root end)
       |> Enum.all?(fn(x) -> rem(value, x) != 0 end)
+  end
+
+  defp div_r(number, prime) do
+    case rem(number, prime) do
+      0 -> div_r(div(number, prime), prime)
+      _ -> number
+    end
   end
 end

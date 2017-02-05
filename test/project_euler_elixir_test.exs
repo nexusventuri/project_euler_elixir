@@ -23,6 +23,10 @@ defmodule ProjectEulerElixirTest do
   end
 
   test "problem 4 largest palindrome for product of 3 digits numbers" do
-    assert ProjectEulerElixir.problem4 == 906609
+    assert ProjectEulerElixir.problem4 == 906_609
+  end
+
+  test "problem 5 minimum number divisible by 1..20" do
+    assert ProjectEulerElixir.problem5(20) == 232_792_560
   end
 end
