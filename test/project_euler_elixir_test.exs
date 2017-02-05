@@ -21,4 +21,8 @@ defmodule ProjectEulerElixirTest do
 
     assert ProjectEulerElixir.problem3(600_851_475_143) == 6857
   end
+
+  test "problem 4 largest palindrome for product of 3 digits numbers" do
+    assert ProjectEulerElixir.problem4 == 906609
+  end
 end

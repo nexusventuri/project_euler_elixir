@@ -20,9 +20,10 @@ defmodule Prime do
 
   @spec next_prime({integer, List}) :: integer
   def next_prime({current, all_primes}) do
-    next = (1..current)
+    next_prime_distance = (1..current)
       |> Enum.find(fn (x) -> is_prime?(current + x, all_primes) end)
-    found = current + next
+
+    found = current + next_prime_distance
     {found, {found, all_primes ++ [found]}}
   end
 
