@@ -1,6 +1,6 @@
 defmodule ProjectEulerElixirTest do
   @moduledoc """
-    Calculates problem solutions
+  Calculates problem solutions
   """
 
   use ExUnit.Case
@@ -28,5 +28,10 @@ defmodule ProjectEulerElixirTest do
 
   test "problem 5 minimum number divisible by 1..20" do
     assert ProjectEulerElixir.problem5(20) == 232_792_560
+  end
+
+  test "problem 6 difference between sum of squares and square of number" do
+    assert ProjectEulerElixir.problem6(10) == 2_640
+    assert ProjectEulerElixir.problem6(100) == 25_164_150
   end
 end

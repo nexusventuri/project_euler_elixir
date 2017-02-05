@@ -51,4 +51,11 @@ defmodule ProjectEulerElixir do
 
     Enum.reduce(max_factors, &(&1 * &2))
   end
+
+  @spec problem6(integer) :: integer
+  def problem6(limit) do
+    sum_of_numbers = Summation.sum_of_numbers(up_to: limit)
+
+    sum_of_numbers * sum_of_numbers - Summation.sum_of_squares(up_to: limit)
+  end
 end
